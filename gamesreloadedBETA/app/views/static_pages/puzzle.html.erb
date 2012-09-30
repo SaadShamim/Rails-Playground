@@ -1,0 +1,10 @@
+<h1>StaticPages#puzzle</h1>
+<p>Find me in app/views/static_pages/puzzle.html.erb</p>
+<ul>
+	<% @puzzleGames.each do |game| %>
+	<li>
+		<%= image_tag game.image_url.to_s %>
+		<%= link_to game.name, game %>
+	</li>
+	<% end %>
+</ul>

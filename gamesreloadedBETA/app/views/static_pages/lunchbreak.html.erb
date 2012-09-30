@@ -1,0 +1,10 @@
+<h1>StaticPages#lunchbreak</h1>
+<p>Find me in app/views/static_pages/lunchbreak.html.erb</p>
+<ul>
+	<% @casualGames.each do |game| %>
+	<li>
+		<%= image_tag game.image_url.to_s %>
+		<%= link_to game.name, game %>
+	</li>
+	<% end %>
+</ul>

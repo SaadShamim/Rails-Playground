@@ -1,0 +1,39 @@
+<h1>edit game</h1>
+
+<%= form_for @game, :html => { :multipart => true } do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br/>
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+      <br />
+      <%= f.label :authorUrl %>
+      <%= f.text_field :authorUrl %>
+      <br />
+      <%= f.label :description %>
+      <%= f.text_area(:description) %>
+      <br />
+      <p>Image: </p>
+      <%= f.file_field :image %>
+      <br/>
+      <p>Game </p>
+      <%= f.file_field :swflocation %>
+	  <h3>Category</h3>
+	  <%= f.radio_button(:category, "action") %>
+	  <%= f.label(:category, "Action") %>
+	  <br />
+	  <%= f.radio_button(:category, "adventure") %>
+	  <%= f.label(:category, "Adventure") %>
+      <br />
+      <%= f.radio_button(:category, "strategy") %>
+	  <%= f.label(:category, "Strategy") %>
+	  <br />
+	  <%= f.radio_button(:category, "casual") %>
+	  <%= f.label(:category, "Casual") %>
+      <br />
+      <%= f.radio_button(:category, "puzzle") %>
+	  <%= f.label(:category, "Puzzle") %>
+      <br />
+      
+      <%= f.submit "Save changes" %>
+<% end %>

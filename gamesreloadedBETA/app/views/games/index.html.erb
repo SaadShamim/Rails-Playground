@@ -1,0 +1,164 @@
+<div class="container">
+
+    
+              <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="http://www.placehold.it/570x572" alt="">
+                    <div class="carousel-caption">
+                      <h4>First Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="http://www.placehold.it/570x572" alt="">
+                    <div class="carousel-caption">
+                      <h4>Second Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestasd eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="http://www.placehold.it/570x572" alt="">
+                    <div class="carousel-caption">
+                      <h4>Third Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+              </div>
+		
+		<h3>New Games</h3> 
+
+		<div class ="row-fluid">
+				  <ul class="thumbnails">
+				  	<% @newGames.each do |newGame| %>
+				  	        <li class= "span4">
+				  	        	<div class="textWrapper">
+				  	        	<%= link_to newGame, class: 'thumbnail' do%>
+					            <%= image_tag newGame.image_url.to_s %>
+					          	<h5 class='description_content'><%= newGame.name.html_safe %></h5> 
+					          	<% end %>
+					          	</div>
+					        </li>
+					 <% end %>              
+				</ul>	
+			</div>
+						
+		<h3>Casual Games</h3>        
+		
+		<div class ="row-fluid">
+				  <ul class="thumbnails">
+				  	<% @actionGames[0..0].each do |actionGame| %>
+							<li class= "span4">
+				  	        	<div class="textWrapper">
+				  	        	<%= link_to actionGame, class: 'thumbnail' do%>
+					            <%= image_tag actionGame.image_url.to_s %>
+					          	<h5 class='description_content'><%= actionGame.name.html_safe %></h5>
+					          	<% end %>
+					          	</div>
+					        </li>
+					<% end %>     
+					<% @actionGames[0..8].each do |actionGame| %>   
+					        <li class= "span2">
+				  	        	<div class="textWrapper">
+				  	        	<%= link_to actionGame, class: 'thumbnail' do%>
+					          	<%= image_tag actionGame.image_url(:thumb_mini).to_s %>
+					          	<h5 class='description_content'><%= truncate(actionGame.name.html_safe, :length => 10) %></h5>
+					          	<% end %>
+					          	</div>
+					        </li>
+					<% end %>		         
+				</ul>
+			
+		</div>
+		
+		<h3>Action Games</h3> 
+		
+		<div class ="row-fluid">
+				<ul class="thumbnails">
+				  	<% @actionGames[0..3].each do |actionGame| %> 
+							<li class= "span3">
+				  	        	<div class="textWrapper">
+								<%= link_to actionGame, class: 'thumbnail' do%>
+					          	<%= image_tag actionGame.image_url.to_s %>
+					          	<h5 class='description_content'><%= actionGame.name.html_safe %></h5>
+					          	<% end %>
+					          	</div>
+					        </li>
+					<% end %>				         
+				</ul>
+				<ul class="thumbnails">
+				  	<% @actionGames[4..7].each do |actionGame| %> 
+							<li class= "span3">
+				  	        	<div class="textWrapper">
+								<%= link_to actionGame, class: 'thumbnail' do%>
+					          	<%= image_tag actionGame.image_url.to_s %>
+					          	<h5 class='description_content'><%= actionGame.name.html_safe %></h5>
+					          	<% end %>
+					          	</div>
+					        </li>
+					<% end %>				         
+				</ul>
+		</div>
+		
+		<h3>Adventure Games</h3> 
+		
+		<div class ="row-fluid">
+				  <ul class="thumbnails">
+				  	<% @actionGames[0..0].each do |actionGame| %>
+							<li class= "span4">
+				  	        	<div class="textWrapper">
+				  	        	<%= link_to actionGame, class: 'thumbnail' do%>
+					            <%= image_tag actionGame.image_url.to_s %>
+					          	<h5 class='description_content'><%= actionGame.name.html_safe %></h5>
+					          	<% end %>
+					          	</div>
+					        </li>
+					<% end %>     
+					<% @actionGames[0..8].each do |actionGame| %>   
+					        <li class= "span2">
+				  	        	<div class="textWrapper">
+				  	        	<%= link_to actionGame, class: 'thumbnail' do%>
+					          	<%= image_tag actionGame.image_url(:thumb_mini).to_s %>
+					          	<h5 class='description_content'><%= truncate(actionGame.name.html_safe, :length => 10) %></h5>
+					          	<% end %>
+					          	</div>
+					        </li>
+					<% end %>		         
+				</ul>
+			
+		</div>
+			
+		<h3>Strategy and Puzzle Games</h3>        
+		
+		<div class ="row-fluid">
+				<ul class="thumbnails">
+				  	<% @actionGames[0..3].each do |actionGame| %> 
+							<li class= "span3">
+				  	        	<div class="textWrapper">
+								<%= link_to actionGame, class: 'thumbnail' do%>
+					          	<%= image_tag actionGame.image_url.to_s %>
+					          	<h5 class='description_content'><%= actionGame.name.html_safe %></h5>
+					          	<% end %>
+					          	</div>
+					        </li>
+					<% end %>				         
+				</ul>
+				<ul class="thumbnails">
+				  	<% @actionGames[4..7].each do |actionGame| %> 
+							<li class= "span3">
+				  	        	<div class="textWrapper">
+								<%= link_to actionGame, class: 'thumbnail' do%>
+					          	<%= image_tag actionGame.image_url.to_s %>
+					          	<h5 class='description_content'><%= actionGame.name.html_safe %></h5>
+					          	<% end %>
+					          	</div>
+					        </li>
+					<% end %>				         
+				</ul>
+		</div>
+
+
+    </div> <!-- /container -->

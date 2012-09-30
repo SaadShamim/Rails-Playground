@@ -1,0 +1,10 @@
+<ul>
+	<% @games.each do |game| %>
+	<li>
+		<%= link_to game.name, game %>
+		<%= link_to "(Edit Game)", editgames_path %>
+		<%= link_to "(Delete)", game, method: :delete,
+                                  data: { confirm: "You sure?" } %>	
+	</li>
+	<% end %>
+</ul>

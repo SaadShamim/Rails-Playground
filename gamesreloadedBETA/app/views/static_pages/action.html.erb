@@ -1,0 +1,11 @@
+<h1>StaticPages#action</h1>
+<p>Find me in app/views/static_pages/action.html.erb</p>
+<h1>games index</h1>
+<ul>
+	<% @actionGames.each do |game| %>
+	<li>
+		<%= image_tag game.image_url.to_s %>
+		<%= link_to game.name, game %>
+	</li>
+	<% end %>
+</ul>

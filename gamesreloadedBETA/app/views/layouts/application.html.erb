@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GamesreloadedBETA</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- navigation -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          
+        <a class="brand" href="./index.html">GamesReloaded.com</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li class=""><a href="#about">Lunch Break</a></li>
+              <li class=""><a href="#contact">Action</a></li>
+              <li class=""><a href="#contact">Strategy</a></li>
+              <li class=""><a href="#contact">Puzzle</a></li>
+              <li class=""><a href="#contact">Adventure</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+</div>
+<!-- flash -->
+<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
